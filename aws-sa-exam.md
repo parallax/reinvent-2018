@@ -2,7 +2,7 @@
 
 Everything based on Well Architected Framework.
 
-AWS Certified Solutions Architect - Official Study Guide
+[ ] Buy the AWS Certified Solutions Architect - Official Study Guide
 
 Domains:
 - Design Resilient Architectures
@@ -168,3 +168,90 @@ Write capacity units 1KB
 - One write per second
 
 Need to be able to calculate this on the exam.
+
+##  Caching
+
+### CloudFront
+
+Caching with CloudFront, HTTP requests.
+
+(Skipped a fair few notes as I'm quite familiar here)
+
+### ElastiCache
+
+ElastiCache can be put in front of DynamoDB, RDS.
+
+memcached and redis flavours.
+
+[ ] Know the differences between
+
+Redis is much more complex.
+
+memcached
+
+- Multithreading
+- Low maintenance
+- Easy horizontal scalability with Auto Discovery
+
+Redis
+
+- Support for data structures
+- persistence
+- Atomic operations
+- Pub/sub messaging
+- Read replicas/failover
+- Cluster mode/sharded clusters
+
+### Designing solutions for scaling
+
+Vertical: (scale up/down)
+Small instance -> large
+
+Horizontal: (scale in/out)
+Change number of instances
+
+EC2 Auto scaling
+- Launches or terminates instances
+- Automatically register new instances with load balancers
+- Can launch across multiple AZ
+- Integrates with ELB
+
+AWS Auto scaling
+- Manage scaling for multiple resources across multiple services
+- Predefined scaling strategies available
+
+Amazon EC2 Auto scaling
+- Only need to manage and scale EC2 Auto Scaling groups
+- Only interested in maintaining the health of your EC2 fleet
+
+You need to monitor in a solution such as CloudWatch.
+
+Can monitor:
+
+- CPU
+- Network
+- Queue size
+- Custom metrics
+
+ELB
+
+Key point: you can not load balance across regions.
+
+Route53 would be used to balance across regions.
+
+Implementing Continuity:
+
+```
+Resources -> CloudWatch -> CloudWatch alarms
+      ^                            v
+      `------------     Auto Scaling Policy
+```
+
+- Memory is not a native CloudWatch event
+
+Exam considerations
+
+- If caching is on the answer, it's probably that (to improve performance)
+- If data is unstructured, it's S3
+- Know when and why to use Auto scaling
+- Choose the instance and database type that makes the most sense for your workload
