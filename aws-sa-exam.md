@@ -255,3 +255,113 @@ Exam considerations
 - If data is unstructured, it's S3
 - Know when and why to use Auto scaling
 - Choose the instance and database type that makes the most sense for your workload
+
+# Domain 3 - Specify Secure Applications and Architectures
+
+3.1 Determine how to secure application tiers
+3.2 Determine how to secure data
+3.3 Define the networking infrastructure
+
+The shared responsibility model is the most important slide in any course.
+
+Fundamental that everything is understood.
+
+Customers secure: You secure IN the cloud
+- Customer Data
+- Platforms, apps, Identity & Access management
+- Operating System, Network & Firewall Configuration
+- Client-Side Data encryption
+- Server-Side Data encryption
+- Network Traffic Protection
+
+Amazon secures: They're responsible for the security OF the cloud
+- Foundation services
+  - Compute
+  - storage
+  - Database
+  - Networking
+Infrastructure:
+- Availability Zones
+- Regions
+- Edge locations
+
+## AWS IAM
+
+- Centrally manage users and user permissions
+- Control which AWS resources users/applications can access
+- Create users, groups, roles and policies
+- Integrates with Microsoft Active Directory and AWS Directory Service
+- Principle of Least Privilege
+
+Identities:
+- IAM Users and groups
+- IAM Roles
+- Federated Users (AD etc)
+- Web Identify Federation (Cognito)
+
+Look at "When to Use AWS STS"
+
+IP restrictions are a whack-a-mole and not currently supported.
+
+Roles are temporary credentials
+
+## Data In-transit
+
+- SSL/TLS
+- VPN
+- Import export/snowball
+- Direct connect is in the exam
+
+Data sent to the AWS API
+
+- AWS API calls use HTTPS
+- All signed with Sigv4
+
+CloudTrail -- traces
+
+## Data at rest in S3
+
+Priva
+
+te by default
+
+Access of HTTP or HTTPS
+Audit of access to all objects
+Supports resource-based policies
+- buckets
+- Prefixes
+- objects
+
+Server-side encyptions
+
+- S3 managed
+- KMS-Managed
+- Customer provided keys
+
+Client-Side encryption
+
+- KMS-Managed Customer Master Key (CSE-KMS)
+- Client-side Master Key (CSE-C)
+
+KMS is a management services that rotates keys automatically.
+
+DynamoDB supports encryption at the row-level
+
+SES potentially mentioned in the test.
+
+EBS - Encrypted at the volume level
+
+CloudHSM is hardware-based key management
+
+Keys are managed only by the customer
+
+FIPS 140 Level 3  is CloudHSM
+
+Pricing for KMS is per dollar per call
+
+[ ] Watch the Protecting Your Data in AWS video
+[ ] Read the Encrypting Data at rest whitepaper
+
+S3 is a major topic in this exam.
+
+A
