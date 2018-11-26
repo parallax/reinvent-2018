@@ -466,3 +466,15 @@ Exam Considerations
 Read the Well Architected Principles document.
 
 Trusted Advisor recommend cost savings.
+
+Exam considerations:
+
+1. Monitor metrics across the System.
+2. Provide alerts for anomalous conditions.
+3. Automate responses to metrics where appropriate.
+4. IAM roles are easier and safer than keys and password.
+
+# Finals tips
+
+- If you only have this week, read the FAQs on each one
+- We will be emailed a code for practice exam.
