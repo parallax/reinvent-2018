@@ -1,4 +1,4 @@
-# Solutions Architect Associate
+# Solutions Architect Associate Bootcamp
 
 Everything based on Well Architected Framework.
 
