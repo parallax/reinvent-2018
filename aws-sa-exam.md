@@ -364,4 +364,105 @@ Pricing for KMS is per dollar per call
 
 S3 is a major topic in this exam.
 
-A
+### VPC
+
+- Security - ACL, Security groups
+- Network isolation - Internet Gateways, Virtual Private Gateways, NAT Gateways
+- Management of IP addresses, know how they're assigned, know what happens when I stop an instance
+- Internet accessibility - subnets
+- Routing
+
+Public subnets
+- Support direct access to the public Internet
+- Specified by a routing table entry to an Internet Gateways
+
+Private Subnets
+- No routing table entry to an Internet Gaetway
+- Indirect access to the public internet via NAT Gateway
+
+VPC Connections
+
+Know the services to get traffic in or out of your Amazon VPC
+
+The recommendation is to use NAT Gateways. That's the focus in this test.
+
+- Internet gateway: connect to the Internet
+- Virtual private gateway: connect to VPN/DC Termination
+- Direct Connect
+- VPC peering
+- NAT gateways
+
+Outbound Traffic From Private instances
+
+[ ] You'll be expected to know how to get a connection out of a private VPC
+[ ] Know what a bastion host is
+
+Sometimes helpful to draw architecture questions.
+
+NAT Gateway needs to be in the public subnet.
+
+Exam considerations:
+
+1. Lock down root AWS user
+2. Security groups only ALLOW, Network ACLs allow explicit DENY
+3. Prefer IAM Roles to access keys
+
+# Domain 4: Design Cost Optimised Architectures
+
+4.1 Determine how to design cost-optimised storage
+4.2 Determine how to design cost-optimised compute
+
+## Storage
+
+Know the differences between the different classes, and prices relative to each other.
+
+Not the exact prices.
+
+EBS:
+1. Volume Types
+2. IOPS
+3. Snapshots
+4. Volume size
+
+## Serverless architecture
+
+We know this inside out.
+
+- AWS Lambda
+- Amazon S3
+- Amazon DynamoDB
+- Amazon API Gateway
+
+## CloudFront
+
+Look at:
+- Traffic distribution
+- requests
+- Data transfer Out
+
+## Compute cost efficient
+
+Reserved Instances - 75% discount compared to on-demand
+
+Spot instances
+
+You can use a combination of the types to get the best cost optimisation.
+
+Exam Considerations
+
+1. If you know it's going to be on, reserve it. Reserve your baseline.
+2. Determine the most cost-effective EC2 pricing model and instance type for each workload.
+3. Any unused CPU time is a waste of money.
+4. Use the most cost-effect data storage and class
+
+## Domain 5: Define Operationally-Excellent Architectures
+
+1. Define features in solutions that enable operational excellence
+
+- Prepare
+- Operate
+- Evolve
+
+Read the Well Architected Principles document.
+
+Trusted Advisor recommend cost savings.
