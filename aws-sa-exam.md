@@ -28,7 +28,6 @@ http://reinvent2018.vstbridge.com/
 
 Set up account
 
-
 Amazon EC2 Instance Store
 - Ephemeral volumes
 - It's a boot disk
@@ -119,7 +118,7 @@ Params are for users to enter inputs.
 
 ## Exam consideration
 
-6 months before a feature makes it way into an exam.
+It's 6 months before a feature makes it way into an exam.
 
 - Lambda - timeouts are 5 mins
 - Single AZ will never be right answer, always 2. More for spot.
@@ -129,3 +128,43 @@ Params are for users to enter inputs.
   - Fault tolerance is recovering automatically
   - High availability is can we get to the instance if one fails
 - Expect that everything will fail at some point and design accordingly
+
+## Domain 2 - Designing Performant Architectures
+
+2.1 Choose Performance Storage and DBs
+
+[ ] Know the 4 types of EBS
+[ ] Know the IOPS
+
+## S3 buckets
+
+[ ] Know the storage classes
+[ ] Know the pricing models
+
+Know about VPC endpoints, can connect directly to an S3 buckets
+
+S3 objects are immutable
+Unlimited objects
+
+## Databases
+
+[ ] Know at least RDS, DynamoDB, Redshift at a high level
+
+## RDS
+
+- Read replicas live inside an AZ.
+- Standby can live in another AZ
+
+### DynamoDB
+
+Provisioned throughput
+
+- Fixed allocation, not the new dynamic scaling -- that won't be in the exam
+
+Read capacity units 4KB
+- One for strongly consistent read per second
+- Two eventually consistent reads per second
+Write capacity units 1KB
+- One write per second
+
+Need to be able to calculate this on the exam.
